@@ -1,0 +1,22 @@
+{
+    "extension_title": {
+        "description": "Extension's title.",
+        "message": "RSS Reader"
+    },
+    "extension_description": {
+        "description": "Extension's description.",
+        "message": "Read your pinned RSS feed in the browser."
+    },
+    "rss_folder": {
+        "description": "Name of the folder which contains RSS feed links.",
+        "message": "RSS Feeds"
+    },
+    "loading_badge": {
+        "description": "Message shown while the RSS feed is loading.",
+        "message": "Loading..."
+    },
+    "error_rss_folder": {
+        "description": "There is the bookmark folder with the RSS feed links.",
+        "message": "RSS feed is void."
+    }
+}
