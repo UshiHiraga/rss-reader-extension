@@ -9,21 +9,32 @@
         "bookmarks"
     ],
     "background": {
-        "service_worker": "/scripts/service_worker.js"
+        "service_worker": "src/scripts/service_worker.js"
     },
-    "host_permissions": [
-        "http://*/*",
-        "https://*/*"
+    "content_scripts": [
+        {
+            "matches": [
+                "https://*/*",
+                "http://*/*"
+            ],
+            "js": [
+                "src/scripts/utils.js",
+                "src/scripts/locate_rss.js"
+            ]
+        }
     ],
     "icons": {
-        "48": "resources/icons/icon-48.png",
-        "72": "resources/icons/icon-72.png",
-        "96": "resources/icons/icon-96.png",
-        "144": "resources/icons/icon-144.png",
-        "192": "resources/icons/icon-192.png",
-        "512": "resources/icons/icon-512.png"
+        "48": "src/icons/icon-48.png",
+        "72": "src/icons/icon-72.png",
+        "96": "src/icons/icon-96.png",
+        "144": "src/icons/icon-144.png",
+        "192": "src/icons/icon-192.png",
+        "512": "src/icons/icon-512.png"
+    },
+    "action": {
+        "default_popup": "src/views/popup.html"
     },
     "side_panel": {
-        "default_path": "resources/views/sidepanel.html"
+        "default_path": "src/views/sidepanel.html"
     }
 }

@@ -1,0 +1,28 @@
+:root {
+    --space-from-timline: 1em;
+    --timeline-width: 2px;
+    --timline-dot-size: 10px;
+}
+
+.timeline {
+    padding: 0.5em 0;
+    padding-left: var(--space-from-timline);
+    border-left: var(--timeline-width) solid;
+    position: relative;
+}
+
+.timeline::before {
+    background-color: white;
+    width: var(--timline-dot-size);
+    height: var(--timline-dot-size);
+    display: block;
+    border-radius: 10px;
+    content: "";
+    position: absolute;
+    top: 10px;
+    left: calc(-0.5 * (var(--timline-dot-size) + var(--timeline-width)));
+}
+
+.timeline:last-child {
+    border-image: linear-gradient(to bottom, currentColor 40%, transparent) 1;
+}
