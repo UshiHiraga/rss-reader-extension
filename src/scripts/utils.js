@@ -19,3 +19,59 @@ function createNodeFromText(text) {
 function parseUrl(string) {
     return new URL(string);
 };
+
+function getHostname(string) {
+    return parseUrl(string).hostname;
+}
+
+async function textFetch(url) {
+    try {
+        const res = await fetch(url);
+        if (!res.ok) throw new Error(`HTTP error! Status: ${res.status}`);
+        return await res.text();
+    } catch (error) {
+        throw error;
+    }
+};
+
+/**
+ * Compares two numbers and returns the difference between them.
+ *
+ * @param {number} a - The first number to compare.
+ * @param {number} b - The second number to compare.
+ * @returns {number} The difference between the second and the first number.
+ */
+function differenceBetween(a, b) {
+    return b - a;
+};
+
+/**
+ * Saves a JSON object to localStorage.
+ *
+ * @param {string} key - The key under which the JSON will be stored.
+ * @param {Object} value - The JSON object to be stored.
+ */
+Storage.prototype.write = function (key, value) {
+    this.setItem(key, JSON.stringify(value));
+};
+
+/**
+ * Reads a JSON object from localStorage.
+ *
+ * @param {string} key - The key under which the JSON was stored.
+ * @returns {Object|null} The stored JSON object or null if not found.
+ */
+Storage.prototype.read = function (key) {
+    return JSON.parse(this.getItem(key) ?? null);
+};
+
+/**
+ * Dispatches a custom event on the window object.
+ *
+ * @param {string} name - The name of the event.
+ * @param {Object} [detail={}] - An optional object containing additional event details.
+ * @returns {boolean} - Returns true if the event is successfully dispatched, otherwise false.
+ */
+window.callEvent = function (name, detail = {}) {
+    return window.dispatchEvent(new CustomEvent(name, { detail }));
+};

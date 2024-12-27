@@ -18,5 +18,17 @@
     "error_rss_folder": {
         "description": "There is the bookmark folder with the RSS feed links.",
         "message": "RSS feed is void."
+    },
+    "form_options_title":{
+        "description": "",
+        "message": "Options"
+    },
+    "form_options_sources":{
+        "description": "",
+        "message": "Source"
+    },
+    "form_options_time":{
+        "description": "",
+        "message": "Time"
     }
 }

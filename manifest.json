@@ -6,7 +6,8 @@
     "default_locale": "en",
     "permissions": [
         "sidePanel",
-        "bookmarks"
+        "bookmarks",
+        "contextMenus"
     ],
     "background": {
         "service_worker": "src/scripts/service_worker.js"

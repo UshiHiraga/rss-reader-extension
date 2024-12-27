@@ -1,9 +1,53 @@
 <html>
-    <head>
-        <meta charset="UTF-8">
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css">
-        <link rel="stylesheet" href="/src/styles/timeline.css">
-        <script src="/src/scripts/utils.js" defer></script>
-        <script src="/src/scripts/sidepanel.js" defer></script>
-    </head>
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css">
+    <link rel="stylesheet" href="/src/styles/timeline.css">
+    <script src="/src/scripts/utils.js" defer></script>
+    <script src="/src/scripts/sidepanel.js" defer></script>
+    <style>
+        #no-rss-feed {
+            display: none;
+        }
+
+        #main:empty+#no-rss-feed {
+            display: block;
+        }
+    </style>
+</head>
+
+<body style="margin-top: 0px;">
+    <section id="no-rss-feed">
+        <h1>__MSG_error_rss_folder__</h1>
+    </section>
+
+
+    <article class="timeline">
+        <time id="options-button" style="cursor: pointer;" datetime="">Options</time>
+    </article>
+    <main>
+      
+    </main>
+    
+    <dialog id="options-dialog">
+        <header>__MSG_form_options_title__</header>
+        <form id="option-form" method="dialog">
+
+            <label for="rss-sources">__MSG_form_options_sources__</label>
+            <select name="rss-sources" id="rss-sources"></select>
+
+            <label for="rss-time-range">__MSG_form_options_time__</label>
+            <select name="rss-time-range" id="rss-time-range">
+                <option selected>Hace una hora</option>
+                <option>Hace un día</option>
+                <option>Hace dos días</option>
+                <option>Cualquier momento</option>
+            </select>
+
+            <button type="submit">Update</button>
+        </form>
+    </dialog>
+</body>
+
 </html>

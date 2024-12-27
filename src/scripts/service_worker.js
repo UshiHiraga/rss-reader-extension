@@ -1,5 +1,6 @@
 function handleInstallEvent() {
     console.log("The extension was installed.");
+    chrome.contextMenus.create({id: "look-for", title: "Look for npm"});
 };
 
 function handleMessageEvent(message, sender, sendResponse) {
@@ -8,7 +9,7 @@ function handleMessageEvent(message, sender, sendResponse) {
         console.log(message.data);
 
         // chrome.action.setBadgeBackgroundColor({ color: [0, 255, 0, 0] }, () => { },);
-        chrome.action.openPopup();
+        //chrome.action.openPopup();
         sendResponse(true); 
     }
 
@@ -17,6 +18,11 @@ function handleMessageEvent(message, sender, sendResponse) {
     };
 };
 
+function handleClickEvent(info){
+    console.log(info);
+}
+
 chrome.sidePanel.setPanelBehavior({ openPanelOnActionClick: true });
 chrome.runtime.onInstalled.addListener(handleInstallEvent);
 chrome.runtime.onMessage.addListener(handleMessageEvent);
+chrome.contextMenus.onClicked.addListener(handleClickEvent);
