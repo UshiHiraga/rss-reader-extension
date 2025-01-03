@@ -6,12 +6,13 @@ function handleForm(e) {
 
 
     function hidee({date, title, href, domain}){
-        console.log("hola")
+        console.log("hola");
         return domain === formData.get("rss-sources");
     };
 
-
-    redrawBody(hidee);
+ 
+    let d = formData.get("rss-sources") === "all" ? hideMoreThanDay : hidee;
+    redrawBody(d);
 }
 
 function hideMoreThanDay({date, title, href, domain}){

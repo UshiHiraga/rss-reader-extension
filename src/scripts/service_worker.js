@@ -18,8 +18,10 @@ function handleMessageEvent(message, sender, sendResponse) {
     };
 };
 
-function handleClickEvent(info){
-    console.log(info);
+function handleClickEvent(info, tab){
+    console.log(info, tab);
+    chrome.sidePanel.setOptions({path: "src/views/popup.html", tabId: tab.id});
+    chrome.sidePanel.open({tabId: tab.id});
 }
 
 chrome.sidePanel.setPanelBehavior({ openPanelOnActionClick: true });
